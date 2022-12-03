@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static '/css/semantic.css' %}" rel="stylesheet">
+    <link href="{% static '/css/mystyle.css' %}" rel="stylesheet">
+    <title>This is blog</title>
+</head>
+<body>
+    
+    <div class="ui inverted  fixed menu"  style="margin-bottom: 0;">
+        <div class="ui container">
+            <a class="item" href="/">
+            <i class="home icon"></i> 首页
+            </a>
+            <a class="item">
+            <i class="grid layout icon"></i> 归档
+            </a>
+            <a class="item">
+            <i class="mail icon"></i> 联系
+            </a>
+            <div class="ui simple dropdown item">
+            More
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                <a class="item" href="/edit"><i class="edit icon"></i> Edit Profile</a>
+                <a class="item"><i class="globe icon"></i> Choose Language</a>
+                <a class="item"><i class="settings icon"></i> Account Settings</a>
+            </div>
+            </div>
+
+            <div class="right item">
+                <div class="ui input"><input type="text" placeholder="Search..."></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui inverted vertical segment banner">
+        <div class="bloger">
+            <h1>BLOGER</h1>
+        </div>
+    </div>
+
+
+    {% for content in content_list %}
+        <div class="ui container content">
+            <h1><a href="page/?page_id={{ content.id }}" style="color:#3b3b3b;">{{ content.title }}</a></h1>
+
+            <p style="color:#777; text-algin:justify">{{ content.content_text|truncatechars:200 }}</p>    
+        </div>
+    {% endfor %}
+
+    <div class="ui inverted  vertical very padded segment">
+        Mugglecoding®
+    </div>
+</body>
+</html>

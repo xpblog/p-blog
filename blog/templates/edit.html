@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static '/css/semantic.css' %}" rel="stylesheet">
+    <link href="{% static '/css/mystyle.css' %}" rel="stylesheet">
+    <title>This is blog</title>
+</head>
+<body>
+    <div class="ui inverted  fixed menu"  style="margin-bottom: 0;">
+        <div class="ui container">
+            <a class="item" href="/">
+            <i class="home icon"></i> 首页
+            </a>
+            <a class="item">
+            <i class="grid layout icon"></i> 归档
+            </a>
+            <a class="item">
+            <i class="mail icon"></i> 联系
+            </a>
+            <div class="ui simple dropdown item">
+            More
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                <a class="item" href="/edit"><i class="edit icon"></i> Edit Profile</a>
+                <a class="item"><i class="globe icon"></i> Choose Language</a>
+                <a class="item"><i class="settings icon"></i> Account Settings</a>
+            </div>
+            </div>
+
+            <div class="right item">
+                <div class="ui input"><input type="text" placeholder="Search..."></div>
+            </div>
+        </div>
+    </div>
+
+    <form action='/edit/' method='post' class="ui container content">
+        <div class="ui fluid labeled input">
+            <div class="ui label">标题</div>
+            <input type='text' name='title' placeholder='请输入标题'>
+        </div>
+        <div class="ui form segment">
+            <textarea name="content_text" cols="60" rows="10" placeholder="内容"></textarea>
+        </div>
+        <div class="ui segment" style="margin-bottom:30px">
+            <input type='submit' class='ui green button' value='提交'></input><input type='reset' class='ui button' value='取消'></input>
+        </div>
+    </form>
+
+    <div class="ui inverted  vertical very padded segment">
+        Mugglecoding®
+    </div>
+</body>
+</html>
